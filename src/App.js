@@ -58,7 +58,7 @@ function App() {
         <Search 
           input={inputHandler}
           search={searchHandler}/>
-        <Results results={state.results} openPopup={openPopup}/> 
+        {(typeof state.results != 'undefined') ?<Results results={state.results} openPopup={openPopup}/>: <h1> No movies are found. Try another word for search</h1>}
 
         {(typeof state.selected.Title != 'undefined') ? <Popup selected={state.selected} closePopup={closePopup}/> : null}
       </main>
